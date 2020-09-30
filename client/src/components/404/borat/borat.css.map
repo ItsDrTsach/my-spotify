@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACCA,OAAO,CAAC,sEAAI;AACZ,OAAO,CAAC,+EAAI;ADAZ,AAAA,MAAM,CAAA;EACJ,UAAU,ECEO,OAAO;CDDzB;;AACD,AAAA,SAAS,CAAA;EACP,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,CAAC;EACV,gBAAgB,EAAE,mEAAmE;EACrF,eAAe,EAAC,KAAK;CACtB",
+    "sources": [
+        "borat.scss",
+        "../../../_variables.scss"
+    ],
+    "names": [],
+    "file": "borat.css"
+}

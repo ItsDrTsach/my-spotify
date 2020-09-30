@@ -1,0 +1,33 @@
+@import '../../variables';
+@import '../../mixins';
+
+.songPage{
+  height:130vh;
+  background: $background-color;
+  display:grid;
+  grid-template-columns: 3fr 2fr;
+  &__song{
+    @include flex(column, space-evenly, center);
+  }
+  &__details{
+    width:50%;
+    @include details-text
+  }
+  &__label{
+    width: 100%;
+    @include flex(row,space-between, center);
+  }
+  &__rightBlock{
+    @include flex(column, center, center)
+  }
+  button{
+   @include unButton;
+  }
+  &__control{
+    position: relative;
+    top:-5rem;
+    width:50%;
+    @include flex(row,space-evenly,center);
+  }
+}
+

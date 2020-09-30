@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+.borat {
+  background: #1E1D1D;
+}
+
+.boratMan {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  opacity: 1;
+  background-image: url("https://www.vectorportal.com/img_novi/borat-vectorportal.jpg");
+  background-size: cover;
+}
+/*# sourceMappingURL=borat.css.map */

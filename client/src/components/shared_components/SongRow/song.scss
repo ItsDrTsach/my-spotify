@@ -1,0 +1,19 @@
+@import '../../../mixins';
+@import '../../../variables';
+.songRow{
+  width: 90%;
+  background:$block-color-primary;
+  @include flex(row,space-evenly,center);
+  margin-bottom: .5rem;
+  &__link{
+    text-decoration: none;
+    color:$text-color;
+  }
+  p{
+    text-decoration: none;
+  }
+  @include song-text;
+  button{
+    @include unButton;
+   }
+}

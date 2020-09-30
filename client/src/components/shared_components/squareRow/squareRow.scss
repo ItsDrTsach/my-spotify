@@ -1,0 +1,33 @@
+@import '../../../variables';
+@import '../../../mixins';
+
+
+.squareRow{
+  // background: $block-color-secondary;
+  height :30vh;
+  margin:5vw;
+  &__link{
+    text-decoration: none;
+    height:30vh;
+  }
+  &__square{
+    display:none;
+    height:50%;
+  }
+}
+.brcpxa{
+  display: none;
+  outline: none;
+}
+.ikyGAt{
+  outline: none;
+  display: none;
+  &:focus{
+    outline: none;
+  }
+}
+    .sc-gtssRu .iamfxf .rec .rec-item-wrapper{
+      &:focus{
+        outline: none;
+      }
+    }

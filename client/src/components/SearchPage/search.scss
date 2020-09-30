@@ -1,0 +1,18 @@
+@import '../../variables';
+@import '../../mixins';
+.searchPage{
+height:fit-content;
+min-height: 100vh;
+background: $background-color;
+@include flex(column, flex-start, center);
+&__input{
+@include input (40vw,5vh);
+}
+&__row{
+  width:90vw;
+}
+&__rowTitle{
+  @include details-text;
+  margin-left:100px;
+}
+}

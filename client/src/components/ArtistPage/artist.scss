@@ -1,0 +1,67 @@
+@import '../../mixins';
+@import '../../variables';
+
+.artistPage{
+  @include flex(column,space-evenly,center);
+  margin:0;
+  height:130vh;
+  background:$background-color;
+  overflow-wrap: break-word;
+  overflow:hidden;
+
+  &__artist{
+    @include flex(row,flex-start,center);
+    height:50vh;
+    // margin: 0 10vw;
+  }
+  &__typo{
+    @include flex(column,space-around,flex-start);
+    height:70%;
+    margin-left: 10vh;
+    margin-bottom: 10vh;
+    width: 60%;
+  }
+  &__link{
+    display: inline;
+    text-decoration: none;
+  }
+  &__name{
+    @include headline-text;
+    margin-top:15rem;
+    font-size: 6rem;
+    font-family: 'Times New Roman', 'sans-serif';
+  }
+  &__description{
+    width: 90%;
+    max-height: 10vh;
+
+    @include description-text;
+  }
+  &__imgContainer{
+    @include flex(column,center,center);
+    border-radius: 50%;
+    height: 50vh;
+    overflow:hidden;
+  }
+  &__img{
+    object-fit: contain;
+    height:70%;
+  }
+  &__songBlock{
+    @include flex(column,center,center);
+    h1{
+      @include details-text;
+      font-size: 2rem;
+      margin-right:40vw;
+    }
+    width:70vw;
+  }
+
+}
+.titleBlock__control{
+  @include flex(row,flex-start,center);
+  width:80%;
+}
+.titleBlock__button{
+  margin:30px 20px;
+}

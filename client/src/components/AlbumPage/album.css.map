@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "ACCA,OAAO,CAAC,sEAAI;AACZ,OAAO,CAAC,+EAAI;AADZ,OAAO,CAAC,sEAAI;AACZ,OAAO,CAAC,+EAAI;ADCZ,AAAA,UAAU,CAAA;EACR,UAAU,ECCO,OAAO;EDAxB,MAAM,EAAC,WAAW;EAClB,UAAU,EAAC,KAAK;EEyChB,OAAO,EAAE,IAAI;EACb,cAAc,EFzCF,MAAM;EE0ClB,eAAe,EF1CI,YAAY;EE2C/B,WAAW,EF3CqB,MAAM;CAKvC;;AAJA,AAAD,qBAAY,CAAA;EACV,KAAK,EAAC,GAAG;EEsCT,OAAO,EAAE,IAAI;EACb,cAAc,EFtCA,MAAM;EEuCpB,eAAe,EFvCM,MAAM;EEwC3B,WAAW,EFxCiB,MAAM;CACnC",
+    "sources": [
+        "album.scss",
+        "../../_variables.scss",
+        "../../_mixins.scss",
+        "../../_variables.scss"
+    ],
+    "names": [],
+    "file": "album.css"
+}

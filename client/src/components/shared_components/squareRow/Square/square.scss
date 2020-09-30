@@ -1,0 +1,25 @@
+@import '../../../../mixins';
+@import '../../../../variables';
+
+.square{
+height:fit-content;
+width: 200px;
+height:100%;
+background: white;
+border-radius: 5px;
+background: white;
+margin:10px;
+@include flex(column,space evenly,center);
+&__title{
+  // @include description-text;
+  color:black;
+}
+&__img{
+  object-fit: contain;
+  width:80%;
+  height:80%;
+}
+&:focus{
+  outline: none;
+}
+}

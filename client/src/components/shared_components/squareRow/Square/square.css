@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+.square {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 200px;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+  background: white;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space evenly;
+      -ms-flex-pack: space evenly;
+          justify-content: space evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.square__title {
+  color: black;
+}
+
+.square__img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 80%;
+  height: 80%;
+}
+
+.square:focus {
+  outline: none;
+}
+/*# sourceMappingURL=square.css.map */

@@ -1,0 +1,13 @@
+@import '../../../variables';
+
+.borat{
+  background: $background-color;
+}
+.boratMan{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  opacity: 1;
+  background-image: url('https://www.vectorportal.com/img_novi/borat-vectorportal.jpg');
+  background-size:cover;
+}

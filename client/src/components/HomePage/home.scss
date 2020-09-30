@@ -1,0 +1,25 @@
+@import '../../mixins';
+@import '../../variables';
+
+.homePage{
+  height: 300vh;
+  @include flex(column, flex-start, center);
+  background:$background-color;
+  &__welcome{
+    @include flex(row, center,center);
+    @include song-text;
+    font-size:3rem;
+    letter-spacing: 1.5rem;
+  }
+  h1{
+    text-align: center;
+  }
+  &__row{
+    width:90vw;
+    margin: -3rem;
+  }
+  &__rowTitle{
+    @include details-text;
+    margin-left:100px;
+  }
+}

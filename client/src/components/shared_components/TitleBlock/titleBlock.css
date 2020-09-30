@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+.link {
+  text-decoration: none;
+}
+
+.titleBlock {
+  background: #746868;
+  margin: 3rem;
+  height: 50vh;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.titleBlock__cover {
+  margin-left: 10rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 20%;
+}
+
+.titleBlock__created_at {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 117.17%;
+  color: #c4c4c4;
+  font-size: 90%;
+}
+
+.titleBlock__info {
+  margin-left: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.titleBlock__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.titleBlock__title {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 117.17%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.titleBlock__numberOfSongs {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 117.17%;
+  color: #c4c4c4;
+  color: #FFFFFF;
+}
+
+.titleBlock__description {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 117.17%;
+  color: #c4c4c4;
+  color: #FFFFFF;
+}
+
+.titleBlock__control {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.titleBlock__control img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 2rem;
+}
+
+.titleBlock__control span {
+  font-family: "Righteous", cursive;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #FFFFFF;
+  color: black;
+}
+
+.titleBlock__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  background: none;
+  outline: none;
+  width: 12rem;
+  height: 3rem;
+  background: #c4c4c4;
+  border-radius: 3px;
+}
+
+.titleBlock__button:active {
+  outline: none;
+}
+
+.titleBlock__button:hover {
+  cursor: pointer;
+}
+
+.titleBlock__button span {
+  text-decoration: none;
+}
+
+.like {
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+}
+
+.like:active {
+  outline: none;
+}
+
+.like:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=titleBlock.css.map */

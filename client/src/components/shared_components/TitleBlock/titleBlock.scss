@@ -1,0 +1,66 @@
+@import '../../../mixins';
+@import '../../../variables';
+.link{
+  text-decoration: none;
+}
+.titleBlock{
+  background: $block-color-secondary;
+  margin:3rem;
+  height:50vh;
+  width:90%;
+@include flex(row,flex-start, center);
+&__cover{
+  margin-left:10rem;
+  object-fit:contain;
+  width:20%;
+}
+&__created_at{
+  @include description-text;
+  font-size: 90%;
+}
+&__info{
+  margin-left: 5rem;
+  @include flex(column,space-evenly,center);
+}
+&__details{
+  @include flex(column,center,flex-start);
+}
+&__title{
+  @include headline-text;
+}
+&__numberOfSongs{
+  @include description-text;
+  color: $text-color;
+}
+&__description{
+  @include description-text;
+  color: $text-color;
+}
+&__control{
+  width:100%;
+  @include flex(row, space-evenly,center);
+  img{
+    object-fit:contain;
+    width:2rem;
+  }
+  span{
+    @include details-text;
+    color:black;
+  }
+}
+&__button{
+  @include flex(row, space-evenly, center);
+  @include unButton;
+  width:12rem;
+  height:3rem;
+  background: $text-color-faded;
+  border-radius: 3px;
+  span{
+    text-decoration: none;
+  }
+}
+}
+.like{
+  @include unButton;
+  color:white;
+}

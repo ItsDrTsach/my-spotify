@@ -1,0 +1,13 @@
+@import '../../variables';
+@import '../../mixins';
+
+.albumPage{
+  background: $background-color;
+  height:fit-content;
+  min-height:130vh;
+@include flex(column,space-evenly,center);
+&__songBlock{
+  width:80%;
+  @include flex(column,center,cenetr)
+}
+}

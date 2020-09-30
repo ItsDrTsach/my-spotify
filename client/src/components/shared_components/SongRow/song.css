@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+.songRow {
+  width: 90%;
+  background: #131010;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: .5rem;
+  font-family: "Rockwell", cursive;
+  font-size: 1rem;
+  font-weight: 100;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.songRow__link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.songRow p {
+  text-decoration: none;
+}
+
+.songRow button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.songRow button:active {
+  outline: none;
+}
+
+.songRow button:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=song.css.map */

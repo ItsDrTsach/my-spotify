@@ -1,0 +1,33 @@
+@import '../../variables';
+@import '../../mixins';
+.navbar{
+  background: $block-color-primary;
+  height: fit-content;
+  padding-bottom:20px;
+  @include flex(row,space-between, center);
+  &__container{
+    @include flex(row, center, center);
+    height: inherit;
+  }
+  &__link{
+    @include flex(row, center,center);
+    justify-self: flex-start;
+    margin:0.5rem 4rem;
+    text-decoration: none;
+    p{
+      @include details-text;
+      height: fit-content;
+      width:min-content;
+      margin-left: 3rem;
+      font-size: 1rem;
+    }
+    &--end{
+      justify-self: flex-end;
+    }
+  }
+  &__logo{
+    height: 5vh;
+    // object-fit: contain;
+  }
+
+}

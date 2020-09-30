@@ -1,0 +1,20 @@
+@import '../../mixins';
+@import '../../variables';
+
+.RegisterPage {
+  margin: 0;
+  height: 100vh;
+  background: $background-color;
+  @include flex(row, center, center);
+  &__form {
+    @include flex(column, center, center);
+    height: 50vh;
+    width: 50vw;
+    background: $text-color-faded;
+  }
+  &__input {
+    @include input(50%, 20%);
+    margin: 0;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../variables';
+@import '../../mixins';
+
+.playlistPage{
+  background: $background-color;
+  height:130vh;
+@include flex(column,space-evenly,center);
+&__songBlock{
+  width:80%;
+  @include flex(column,center,cenetr)
+}
+}

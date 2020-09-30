@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+.squareRow {
+  height: 30vh;
+  margin: 5vw;
+}
+
+.squareRow__link {
+  text-decoration: none;
+  height: 30vh;
+}
+
+.squareRow__square {
+  display: none;
+  height: 50%;
+}
+
+.brcpxa {
+  display: none;
+  outline: none;
+}
+
+.ikyGAt {
+  outline: none;
+  display: none;
+}
+
+.ikyGAt:focus {
+  outline: none;
+}
+
+.sc-gtssRu .iamfxf .rec .rec-item-wrapper:focus {
+  outline: none;
+}
+/*# sourceMappingURL=squareRow.css.map */

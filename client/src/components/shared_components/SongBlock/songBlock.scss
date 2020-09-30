@@ -1,0 +1,9 @@
+@import '../../../variables';
+@import '../../../mixins';
+.songBlock{
+  @include flex(column,center,center);
+  width:100%;
+  h1{
+    @include details-text;
+  }
+}

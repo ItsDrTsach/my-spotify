@@ -1,0 +1,65 @@
+@import './variables';
+
+// text
+@mixin headline-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 117.17%;
+  text-align: center;
+  color:$text-color;
+}
+@mixin description-text {
+  font-family: Arial;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 117.17%;
+color:  $text-color-faded;
+}
+@mixin details-text {
+  font-family: $font-details;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color:$text-color;
+}
+@mixin song-text {
+  font-family: $font-song;
+  font-size: 1rem;
+  font-weight: 100;
+  color:$text-color;
+  text-align: center;
+}
+//other
+@mixin unButton {
+  border:none;
+  background: none;
+  outline:none;
+  &:active{
+    outline:none;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+
+}
+@mixin flex ($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin input ($width,$height) {
+@include unButton;
+margin: 100px;
+width:$width;
+height:$height;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 51px;
+text-align: center;
+font-size:2rem;
+padding :30px;
+background: #FFFFFF;
+}

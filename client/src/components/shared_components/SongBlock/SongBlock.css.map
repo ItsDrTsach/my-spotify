@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "ACCA,OAAO,CAAC,sEAAI;AACZ,OAAO,CAAC,+EAAI;AADZ,OAAO,CAAC,sEAAI;AACZ,OAAO,CAAC,+EAAI;ADAZ,AAAA,UAAU,CAAA;EE6CR,OAAO,EAAE,IAAI;EACb,cAAc,EF7CA,MAAM;EE8CpB,eAAe,EF9CM,MAAM;EE+C3B,WAAW,EF/CiB,MAAM;EAClC,KAAK,EAAC,IAAI;CAIX;;AAND,AAGE,UAHQ,CAGR,EAAE,CAAA;EEgBF,WAAW,EDVE,WAAW,EAAE,OAAO;ECWjC,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,GAAG;EAChB,KAAK,EDfM,OAAO;CDFjB",
+    "sources": [
+        "songBlock.scss",
+        "../../../_variables.scss",
+        "../../../_mixins.scss",
+        "../../../_variables.scss"
+    ],
+    "names": [],
+    "file": "songBlock.css"
+}

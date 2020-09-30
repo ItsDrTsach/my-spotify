@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url(//db.onlinewebfonts.com/c/4aa3e37e571255737e5e6d4e9d9770a5?family=Rockwell);
+.four {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #1E1D1D;
+  min-height: 100vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: -20vh;
+}
+
+.four p {
+  margin: 0;
+}
+
+.four__title {
+  font-family: "Righteous", cursive;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #FFFFFF;
+  font-size: 7rem;
+}
+
+.four__not {
+  font-family: "Righteous", cursive;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20rem;
+}
+
+.four__subtitle {
+  font-family: "Righteous", cursive;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.four__description {
+  font-family: "Rockwell", cursive;
+  font-size: 1rem;
+  font-weight: 100;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.four__button {
+  z-index: 500000;
+}
+/*# sourceMappingURL=four.css.map */
