@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import './home.css';
 import SquareRow from '../shared_components/squareRow/SquareRow';
 import network from '../../network/network';
-import { read } from '../../network/ajax';
 
 function HomePage() {
   const [topTens, setTopTens] = useState(Array(4).fill([]));
   useEffect(() => {
     (async () => {
       try {
-        const top10 = await Promise.all([
-          read('api/v1/song'),
-          read('api/v1/album'),
-          read('api/v1/artist'),
-          read('api/v1/playlist'),
-        ]);
+        const top10 = await Promise.all([network.get('api/v1/song'), network.get('api/v1/album'), network.get('api/v1/artist'), network.get('api/v1/playlist')]);
         setTopTens(top10);
       } catch (error) {
         console.log(error);

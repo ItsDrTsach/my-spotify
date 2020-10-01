@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {useLocation, useParams} from 'react-router-dom';
 import YouTube from 'react-youtube';
 import './songPage.css';
 import network from '../../network/network';
@@ -12,19 +12,19 @@ const opts = {
   },
 };
 function SongPage() {
-  const { songId } = useParams();
+  const {songId} = useParams();
   const [song, setSong] = useState();
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await network('get', `api/song/${songId}`);
-        setSong(data[0]);
+        const song = await network.get(`api/v1/song/byId/${songId}`);
+        setSong(song);
       } catch (error) {
         console.log(error);
       }
     })();
   }, []);
-  console.log({ song });
+  console.log({song});
 
   // Functions
   const onReady = (event) => {
@@ -35,11 +35,7 @@ function SongPage() {
     <div className='songPage'>
       {song && (
         <div className='songPage__song'>
-          <YouTube
-            videoId={song.youtubeLink.slice(32)}
-            opts={opts}
-            onReady={() => onReady}
-          />
+          <YouTube videoId={song.youtubeLink.slice(32)} opts={opts} onReady={() => onReady} />
           {song.name && (
             <div className='songPage__details'>
               <div className='songPage__label'>

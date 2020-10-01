@@ -1,11 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useContext} from 'react';
+import {Link, useHistory} from 'react-router-dom';
 import logo from './guitar.png';
 import person from './person.png';
 import './navbar.css';
-import { useStateValue } from '../../StateProvider';
+import {UserContext} from '../UserContext';
+const user = '';
 function Navbar() {
-  const [{ user }] = useStateValue();
+  const history = useHistory();
+  const {user, setUser} = useContext(UserContext);
+  const handleLogout = () => {
+    debugger;
+    localStorage.removeItem('token');
+    history.push('/');
+    setUser(null);
+  };
   return (
     <nav className='navbar'>
       <div className='navbar__container'>
@@ -23,6 +31,9 @@ function Navbar() {
         </Link>
       </div>
       <div className='navbar__container'>
+        <button className='navbar__logout' onClick={handleLogout}>
+          logout
+        </button>
         <Link to='/' className='navbar__link navbar__link--end'>
           <img className='navbar__logo' src={person} alt='music-logo' />
           <p>Hello {user.name || 'Guest'}</p>

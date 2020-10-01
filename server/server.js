@@ -6,7 +6,7 @@ const app = express();
 const cors = require('cors');
 
 //gloabl middlewares
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
 //my logger
@@ -16,7 +16,7 @@ app.use(logger);
 app.use('/users', require('./Routes/user'));
 
 //check if token is valid, and updating it
-// app.use(require('./helpers/ensureToken'));
+app.use(require('./helpers/ensureToken'));
 
 // expose the api
 app.use('/api', require('./api'));

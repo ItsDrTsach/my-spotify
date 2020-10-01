@@ -4,13 +4,10 @@ const server = require('../server');
 const request = require('supertest');
 // import ORM model
 const { Song } = require('../models');
-const userRouter = require('../Routes/user');
 
 //create a mock song
 const songMock = {
   name: 'fake song mock',
-  albumId: 1,
-  artistId: 1,
 };
 const userMock = {
   email: 'fake@gmail.com',
@@ -34,7 +31,6 @@ describe('Song endpoint', () => {
     await Song.destroy({ truncate: true, force: true });
     await server.close();
     //let jest know that the test is over
-    done();
   });
   //reset all data before each test suit
   beforeEach(async () => {
@@ -42,8 +38,7 @@ describe('Song endpoint', () => {
   });
   it('can add a song ', async () => {
     //send a post request with the mock i created
-    expect(true).toBe(true);
-    const newSong = await request(server).post('api/v1/song').send(songMock);
+    const newSong = await request(server).post('/api/v1/song').send(songMock);
     expect(newSong.name).toBe(songMock.name);
   });
 });

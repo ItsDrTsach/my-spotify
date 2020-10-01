@@ -1,33 +1,40 @@
 @import '../../variables';
 @import '../../mixins';
-.navbar{
+.navbar {
   background: $block-color-primary;
   height: fit-content;
-  padding-bottom:20px;
-  @include flex(row,space-between, center);
-  &__container{
+  padding-bottom: 20px;
+  @include flex(row, space-between, center);
+  &__container {
     @include flex(row, center, center);
     height: inherit;
   }
-  &__link{
-    @include flex(row, center,center);
+  &__link {
+    @include flex(row, center, center);
     justify-self: flex-start;
-    margin:0.5rem 4rem;
+    margin: 0.5rem 4rem;
     text-decoration: none;
-    p{
+    p {
       @include details-text;
       height: fit-content;
-      width:min-content;
+      width: min-content;
       margin-left: 3rem;
       font-size: 1rem;
     }
-    &--end{
+    &--end {
       justify-self: flex-end;
     }
   }
-  &__logo{
+  &__logout {
+    @include unButton;
+    @include description-text;
+    font-size: 80%;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__logo {
     height: 5vh;
     // object-fit: contain;
   }
-
 }

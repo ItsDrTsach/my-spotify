@@ -78,6 +78,31 @@
   justify-self: flex-end;
 }
 
+.navbar__logout {
+  border: none;
+  background: none;
+  outline: none;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 117.17%;
+  color: #c4c4c4;
+  font-size: 80%;
+}
+
+.navbar__logout:active {
+  outline: none;
+}
+
+.navbar__logout:hover {
+  cursor: pointer;
+}
+
+.navbar__logout:hover {
+  text-decoration: underline;
+}
+
 .navbar__logo {
   height: 5vh;
 }

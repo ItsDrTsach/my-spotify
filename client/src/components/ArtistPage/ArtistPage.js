@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './artist.css';
 import SongBlock from '../shared_components/SongBlock/SongBlock';
 // import play from "../shared_components/TitleBlock/img/play_black.png";
 // import shuffle from "../shared_components/TitleBlock/img/shuffle_black.png";
 // import like from "../shared_components/TitleBlock/../SongRow/img/like.png";
-import { Link, useParams } from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import network from '../../network/network';
 
 // const bestSongsOfArtist = arrayOfSongs;
@@ -15,14 +15,13 @@ function ArtistPage() {
   // const likeArtist = () => {
   //   alert("like artist");
   // };
-  const { artistId } = useParams();
+  const {artistId} = useParams();
   const [artist, setArtist] = useState();
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await network('get', `api/artist/${artistId}`);
-        console.log(data)
-        setArtist(data);
+        const artist = await network.get(`api/v1/artist/byId/${artistId}`);
+        setArtist(artist);
       } catch (error) {
         console.log(error);
       }
@@ -34,9 +33,7 @@ function ArtistPage() {
         <div className='artistPage__artist'>
           <div className='artistPage__typo'>
             <h1 className='artistPage__name'>{artist.name}</h1>
-            <span className='artistPage__description'>
-              {artist.description}
-            </span>
+            <span className='artistPage__description'>{artist.description}</span>
             {/* <div className='titleBlock__control'>
               <Link to={playLink} className='artistPage__link ti'>
                 <button className='titleBlock__button'>
@@ -56,22 +53,14 @@ function ArtistPage() {
             </div> */}
           </div>
           <div className='artistPage__imgContainer'>
-            <img
-              className='artistPage__img'
-              src={artist.coverImg}
-              alt={artist.name}
-            />
+            <img className='artistPage__img' src={artist.coverImg} alt={artist.name} />
           </div>
         </div>
       )}
       {artist && (
         <div className='artistPage__songBlock'>
           <h1>{artist.name}'s popular songs</h1>
-          <SongBlock
-            songsToRender={artist.Songs}
-            type='artist'
-            typeId={artist.id}
-          />
+          <SongBlock songsToRender={artist.Songs} type='artist' typeId={artist.id} />
         </div>
       )}
     </div>

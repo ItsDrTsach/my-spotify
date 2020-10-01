@@ -1,8 +1,6 @@
 const logger = (req, res, next) => {
   next();
-  console.log(
-    '-------------------------------------------my logger--------------------------------------------'
-  );
+  console.log('-------------------------------------------my logger--------------------------------------------');
   console.log(req.method);
   console.log('request ip', req.ip);
   console.log('request hostname: ', req.hostname);
@@ -12,7 +10,8 @@ const logger = (req, res, next) => {
   console.log('body: ', req.body);
   console.log('params: ', req.params);
   console.log('query: ', req.query);
-  console.log(('headers', req.headers));
+  console.log(('headers', req.headers['authorization']));
+  console.log(('res Status', res.status));
 };
 
 module.exports = logger;

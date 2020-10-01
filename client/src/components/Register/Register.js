@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import { create } from '../../network/ajax';
-import { ACTIONS } from '../../reducer';
-import { useStateValue } from '../../StateProvider';
+import React, {useState} from 'react';
+import {useForm} from 'react-hook-form';
+import {Link, useHistory} from 'react-router-dom';
+import network from '../../network/network';
 import './register.css';
 function Register() {
-  const { register: Register, handleSubmit, errors } = useForm();
+  const history = useHistory();
+  const {register: Register, handleSubmit, errors} = useForm();
   const [error, setError] = useState('');
-  const [, dispatch] = useStateValue();
   const onSubmit = (data) => {
-    create('users/register', data)
+    network
+      .post('users/register', data)
       .then((res) => {
-        dispatch({ type: ACTIONS.LOGIN });
+        //redirect to login
+        history.push('/');
       })
       .catch((e) => {
         setError(e.message);
@@ -40,13 +40,7 @@ function Register() {
             pattern: /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
           })}
         />
-        <input
-          name='password'
-          type='password'
-          className='RegisterPage__input'
-          placeholder='password'
-          ref={Register({ required: true })}
-        />
+        <input name='password' type='password' className='RegisterPage__input' placeholder='password' ref={Register({required: true})} />
         {error !== '' && <p>{error}</p>}
         <Link to='/'>Login</Link>
         <input type='submit' value='Register' />

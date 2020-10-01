@@ -2,32 +2,24 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
 module.exports = function (req, res, next) {
-  //get the token header which sent by the client
-  const clientToken = req.headers['authorization'];
-
-  //check if token is valid token
-  if (typeof clientToken !== 'undefined') {
-    jwt.verify(clientToken, process.env.SECRET_KEY, (error, data) => {
-      if (error) {
-        return res.status(403).json({ message: error });
+  let token = req.headers['x-access-token'] || req.headers['authorization'];
+  //clean the token
+  if (token.startsWith('bearer ')) {
+    token = token.slice(7, token.length);
+  }
+  // verify and decode the token
+  if (token) {
+    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+      if (err) {
+        return res
+          .status(401)
+          .json({ success: false, message: 'unauthorized!' });
+      } else {
+        req.decoded = decoded;
+        next();
       }
-      console.log(data);
-      const newToken = {
-        isAdmin: data.isAdmin,
-        user: data.user,
-        userId: data.userId,
-      };
-      if (!data.rememberToken) {
-        newToken.exp = Date.now() / 1000 + 60 * 30;
-      }
-      const token = jwt.sign(newToken, process.env.SECRET_KEY);
-      req.isAdmin = data.isAdmin;
-      req.userEmail = data.user;
-      req.userId = data.userId;
-      res.cookie('token', token);
-      next();
     });
   } else {
-    res.status(403).json({ message: 'token is required' });
+    return res.status(400).json({ message: 'JWT token must be supllied ' });
   }
 };
