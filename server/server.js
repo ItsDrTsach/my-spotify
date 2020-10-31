@@ -4,6 +4,7 @@ const express = require("express");
 const logger = require("./helpers/logger");
 const app = express();
 const cors = require("cors");
+const checktoken = require("./helpers/checktoken");
 
 //gloabl middlewares
 app.use(express.urlencoded({ extended: true }));
@@ -19,7 +20,7 @@ app.use("/users", require("./Routes/user"));
 // app.use(require('./helpers/ensureToken'));
 
 // expose the api
-app.use("/api", require("./api"));
+app.use("/api", checktoken, require("./api"));
 
 //handle invalid endpoints
 app.use(require("./helpers/unknownEndpoint"));

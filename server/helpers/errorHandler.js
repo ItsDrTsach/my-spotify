@@ -1,8 +1,5 @@
-const { response } = require('../server');
+const { response } = require("../server");
 
 module.exports = function (error, req, res, next) {
-  if (error.name === 'CastError') {
-    return res.status(400).json({ error: 'malformed id' });
-  }
-  next(error);
+  res.status(400).json({ message: "Cannot process request" });
 };

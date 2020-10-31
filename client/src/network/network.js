@@ -1,42 +1,35 @@
-//helpers
-const getToken = () => {
-  return localStorage.getItem('token');
-};
+import axios from "axios";
+import Cookies from "js-cookie";
 
-const refresh = () => {
-  window.location.assign(window.location);
-};
+const network = axios.create({});
 
-export default function network(endpoint = '', {body, ...customConfig} = {}) {
-  const headers = {
-    'Content-Type': "application/json;charset=utf-8'",
-    Authorization: 'bearer ' + getToken(),
-  };
-  const baseUrl = '/';
-  const url = baseUrl + endpoint;
-  const config = {
-    method: body ? 'POST' : 'GET',
-    ...customConfig,
-    headers: {
-      ...headers,
-      ...customConfig.headers,
-    },
-    ...(body ? {body: JSON.stringify(body)} : {}),
-  };
-  console.table(url, config);
-  return fetch(url, config).then(async (res) => {
-    if (res.status === 400) {
-      refresh();
+const getToken = () => Cookies.get("accessToken");
+
+network.interceptors.request.use((config) => {
+  config.headers.authorization = `Bearer ${getToken()}`;
+  return config;
+});
+
+network.interceptors.response.use(
+  ({ data }) => data,
+  async (error) => {
+    const status = error.response ? error.response.status : null;
+    const originalRequest = error.config;
+
+    if (status === 408) {
+      try {
+        await network.post("/users/token", {
+          token: Cookies.get("refreshToken"),
+        });
+        const data = await network(originalRequest);
+        return data;
+      } catch (e) {
+        return e;
+      }
+    } else {
+      return Promise.reject(error.response.data);
     }
-    const data = await res.json();
-    console.table({url, res});
-    if (res.ok) {
-      return data;
-    } else return Promise.reject(data);
-  });
-}
+  }
+);
 
-network.get = (endpoint) => network(endpoint, {method: 'GET'});
-network.post = (endPoint, body) => network(endPoint, {method: 'POST', ...body});
-network.put = (endPoint, body) => network(endPoint, {method: 'PUT', ...body});
-network.delete = (endPoint) => network(endPoint, {method: 'DELETE'});
+export default network;
