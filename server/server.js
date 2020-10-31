@@ -1,30 +1,30 @@
 //imports libraries
-require('dotenv').config();
-const express = require('express');
-const logger = require('./helpers/logger');
+require("dotenv").config();
+const express = require("express");
+const logger = require("./helpers/logger");
 const app = express();
-const cors = require('cors');
+const cors = require("cors");
 
 //gloabl middlewares
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 //my logger
 app.use(logger);
 
 //user routh is exposed since he does not need a token
-app.use('/users', require('./Routes/user'));
+app.use("/users", require("./Routes/user"));
 
 //check if token is valid, and updating it
-app.use(require('./helpers/ensureToken'));
+// app.use(require('./helpers/ensureToken'));
 
 // expose the api
-app.use('/api', require('./api'));
+app.use("/api", require("./api"));
 
 //handle invalid endpoints
-app.use(require('./helpers/unknownEndpoint'));
+app.use(require("./helpers/unknownEndpoint"));
 
 //handle errors
-app.use(require('./helpers/errorHandler'));
+app.use(require("./helpers/errorHandler"));
 
 module.exports = app;
